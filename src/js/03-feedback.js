@@ -1,3 +1,5 @@
+import throttle from 'lodash.throttle';
+
 const form = document.querySelector('.feedback-form');
 const email = document.querySelector("[name='email']");
 const message = document.querySelector("[name='message']");
@@ -37,5 +39,5 @@ const handleSubmit = event => {
 };
 
 window.addEventListener('load', preloadValue);
-form.addEventListener('input', _.throttle(handleInput, 500));
+form.addEventListener('input', throttle(handleInput, 500));
 form.addEventListener('submit', handleSubmit);
